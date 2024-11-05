@@ -3,6 +3,15 @@ import bcrypt
 
 
 def validate(password):
+    """
+    Validates the provided password against a stored hashed password.
+
+    Args:
+        password (str): The password input from the user.
+
+    Returns:
+        None: This function prints the login status directly.
+    """
     hash = b'$2b$12$LtgtOpJ15vdK.HMw4hx3ZeujgU78gKJ.J5EIaA.YZ1R2QAJowNGOG'
     password = bytes(password, encoding='utf-8')
     if bcrypt.checkpw(password, hash):
